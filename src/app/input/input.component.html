@@ -1,0 +1,54 @@
+<div class="container">
+<mat-card >
+  <form (submit)="onSubmit(postForm)" #postForm="ngForm" >
+
+    <!-- <mat-grid-list cols="1" rowHeight="100px" > 
+      <mat-grid-tile > -->
+          <div class="row justify-content-around" >
+            <div class="col-md">
+        <mat-form-field appearance="outline" >
+          <mat-label>สกุลเงินเริ่มต้น</mat-label>
+          <mat-select required="true" name="currency" ngModel>
+            <mat-option *ngFor="let currency of currencyChosen" [value]="currency.id">{{ currency.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+            </div>
+      
+            <div class="col-md-9">
+        <mat-form-field appearance="outline" >
+            <mat-label>Input amount</mat-label>
+          <input  matInput type="number" name="amount" ngModel required>
+        </mat-form-field>
+      </div>
+      </div>
+      <!-- </mat-grid-tile> -->
+      
+      <!-- <mat-grid-tile> -->
+          <div class="row justify-content-around">
+            <div class="col-md">
+      <mat-form-field appearance="outline">
+        <mat-label>สกุลเงินเทียบ</mat-label>
+        <mat-select required="true" name="conCurrency" ngModel>
+          <mat-option *ngFor="let currency of currencyChosen" [value]="currency.id">{{ currency.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+        </div>
+        <div class="col-md-9">
+        <mat-form-field appearance="outline">
+        <input matInput placeholder="Concerted amount" [value]="convertResult | number:'1.2-8'" >
+        </mat-form-field> 
+        </div>
+        </div>     
+    <!-- </mat-grid-tile> -->
+
+    <!-- </mat-grid-list> -->
+    <button mat-raised-button color="primary" type="submit">แปลงค่าเงิน</button>
+    
+    
+
+
+
+  </form>
+</mat-card>
+</div>
+
